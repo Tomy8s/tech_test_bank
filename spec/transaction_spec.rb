@@ -20,7 +20,7 @@ describe Transaction do
     end
   end
 
-  describe '#new_balance'
+  describe '#new_balance' do
     it 'calculates the new balance, given the initial balance and a debiting balance change' do
       expect(subject_in.new_balance).to eq 150
     end
@@ -28,4 +28,5 @@ describe Transaction do
     it 'calculates the new balance, given the initial balance and a withdrawl balance change' do
       expect(subject_out.new_balance).to eq 50
     end
+  end
 end
