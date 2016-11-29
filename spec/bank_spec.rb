@@ -19,4 +19,10 @@ describe Bank do
       expect{ subject.class.print_headings }.to output("date       || credit || debit || balance\n").to_stdout
     end
   end
+
+  describe '::print_transactions' do
+    it 'takes one argument' do
+      expect(subject.class).to respond_to('print_transactions').with(1).argument
+    end
+  end
 end
