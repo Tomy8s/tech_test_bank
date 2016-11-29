@@ -36,8 +36,8 @@ describe Bank do
     #   expect{ subject.class.print_transactions(account) }.to output("2016-11-29\n2016-11-29\n").to_stdout
     # end
 
-    it 'prints dates dd/mm/yyy' do
-      expect{ subject.class.print_transactions(account) }.to output("29/11/2016\n29/11/2016\n").to_stdout
+    it 'prints dates dd/mm/yyy, balance' do
+      expect{ subject.class.print_transactions(account) }.to output("29/11/2016 || 75\n29/11/2016 || 125\n").to_stdout
     end
   end
 end
