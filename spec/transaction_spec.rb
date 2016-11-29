@@ -16,7 +16,6 @@ describe Transaction do
     end
 
     it 'records the negative change in balance' do
-      subject = Transaction.new(Date.new(2016,11,29), -50)
       expect(subject_out.balance_change).to eq -50
     end
   end
