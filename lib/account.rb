@@ -6,4 +6,7 @@ class Account
     @current_balance = opening_balance
     @transaction_history = []
   end
+
+  def pay_in(sum)
+  end
 end
