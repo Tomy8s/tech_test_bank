@@ -75,4 +75,10 @@ describe Account do
       expect(subject.transaction_history).to include transaction
     end
   end
+
+  describe '#update_balance' do
+    it 'takes an argument' do
+      expect(subject).to respond_to('update_balance').with(1).argument
+    end
+  end
 end
