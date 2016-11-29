@@ -8,8 +8,9 @@ class Bank
   end
 
   def self.print_transactions(account)
-    account.transaction_history.each do |transact|
-      puts transact.date.strftime('%d/%m/%Y')
+    transactions = account.transaction_history.reverse
+    transactions.each do |transact|
+      puts "#{transact.date.strftime('%d/%m/%Y')} || #{transact.new_balance}"
     end
   end
 end

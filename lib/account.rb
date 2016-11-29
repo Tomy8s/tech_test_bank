@@ -10,12 +10,14 @@ class Account
   def pay_in(sum, date = Date.today)
     transaction = Transaction.new(date, sum, @current_balance)
     @transaction_history << transaction
+    update_balance(transaction)
     transaction
   end
 
   def pay_out(sum, date = Date.today)
     transaction = Transaction.new(date, -(sum), @current_balance)
     @transaction_history << transaction
+    update_balance(transaction)
     transaction
   end
 
