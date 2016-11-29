@@ -71,7 +71,7 @@ describe Account do
     end
 
     it 'adds Transactions to #transaction_history' do
-      transaction = subject.pay_in(50)
+      transaction = subject.pay_out(50)
       expect(subject.transaction_history).to include transaction
     end
   end
