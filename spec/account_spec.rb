@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Account do
   let(:subject) { Account.new('John Smith') }
-  describe '#name' do
+  describe '#customer_full_name' do
     it 'is initialized when given a name' do
       expect(subject.customer_full_name).to eq 'John Smith' 
     end
@@ -23,10 +23,16 @@ describe Account do
     end
   end
 
-  describe '#transactions' do
+  describe '#transaction_history' do
     it 'intializes with an empty array of transactions' do
-      expect(subject.transaction_history).to be_a Array
+      expect(subject.transaction_history).to be_an Array
       expect(subject.transaction_history).to be_empty
+    end
+  end
+
+  describe '#pay_in' do
+    it 'accepts an integer as an argument' do
+      expect(subject).to respond_to('pay_in').with(1).argument
     end
   end
 end
