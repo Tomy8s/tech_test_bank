@@ -11,4 +11,10 @@ describe Account do
       expect{ Account.new }.to raise_error
     end
   end
+
+  describe '#current_balance' do
+    it 'has a default balance of 100' do
+      expect(subject.current_balance).to eq 100
+    end
+  end
 end
