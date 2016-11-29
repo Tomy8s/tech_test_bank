@@ -46,6 +46,11 @@ describe Account do
     it 'returns a transaction object with the correct amount added' do
       expect(subject.pay_in(50).balance_change).to eq 50
     end
+
+    it 'adds Transactions to #transaction_history' do
+      transaction = subject.pay_in(50)
+      expect(subject.transaction_history).to include transaction
+    end
   end
 
   describe '#pay_out' do
@@ -63,6 +68,11 @@ describe Account do
 
     it 'returns a transaction object with the correct amount added' do
       expect(subject.pay_out(50).balance_change).to eq -50
+    end
+
+    it 'adds Transactions to #transaction_history' do
+      transaction = subject.pay_in(50)
+      expect(subject.transaction_history).to include transaction
     end
   end
 end
