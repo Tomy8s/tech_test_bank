@@ -2,6 +2,9 @@ require 'spec_helper'
 
 describe Account do
   let(:subject) { Account.new('John Smith') }
+  let(:deposit) { Transaction.new(Date.new(2016,11,29), 50, 100) }
+  let(:withdrawl) { Transaction.new(Date.new(2016,11,29), -50, 100) }
+
   describe '#customer_full_name' do
     it 'is initialized when given a name' do
       expect(subject.customer_full_name).to eq 'John Smith' 
@@ -79,6 +82,16 @@ describe Account do
   describe '#update_balance' do
     it 'takes an argument' do
       expect(subject).to respond_to('update_balance').with(1).argument
+    end
+
+    it 'updates when money is paid in' do
+      subject.update_balance(deposit)
+      expect(subject.current_balance).to eq 150 
+    end
+
+    it 'updates when money is paid out' do
+      subject.update_balance(withdrawl)
+      expect(subject.current_balance).to eq 50 
     end
   end
 end
