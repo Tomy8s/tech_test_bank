@@ -20,5 +20,6 @@ class Account
   end
 
   def update_balance(transaction)
+    @current_balance = transaction.new_balance
   end
 end
