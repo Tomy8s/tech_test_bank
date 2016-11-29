@@ -7,9 +7,9 @@ class Account
     @transaction_history = []
   end
 
-  def pay_in(sum)
+  def pay_in(sum, date = Date.today)
   end
 
-  def pay_out(sum)
+  def pay_out(sum, date = Date.today)
   end
 end
