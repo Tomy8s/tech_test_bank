@@ -9,7 +9,7 @@ class Bank
 
   def self.print_transactions(account)
     account.transaction_history.each do |transact|
-      puts transact.date.to_s
+      puts transact.date.strftime('%d/%m/%Y')
     end
   end
 end
