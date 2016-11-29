@@ -10,13 +10,13 @@ describe Bank do
     end
 
     it 'returns headings' do
-      expect(statement).to output("date       || credit || debit || balance\n").to_stdout
+      expect{ statement }.to output("date       || credit || debit || balance\n").to_stdout
     end
   end
 
-  describe '#print_headings' do
+  describe '::print_headings' do
     it 'prints the correct headings' do
-      expect{ subject.print_headings }.to output("date       || credit || debit || balance\n").to_stdout
+      expect{ subject.class.print_headings }.to output("date       || credit || debit || balance\n").to_stdout
     end
   end
 end

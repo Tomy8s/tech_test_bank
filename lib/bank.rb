@@ -3,7 +3,7 @@ class Bank
     print_headings
   end
 
-  def print_headings
+  def self.print_headings
     puts 'date       || credit || debit || balance'
   end
 end
