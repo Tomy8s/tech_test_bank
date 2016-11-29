@@ -38,6 +38,10 @@ describe Account do
     it 'can accept a date as a second argument' do
       expect(subject).to respond_to('pay_in').with(2).argument
     end
+
+    it 'returns a transaction object when called' do
+      expect(subject.pay_in(50)).to be_a Transaction
+    end
   end
 
   describe '#pay_out' do
@@ -47,6 +51,10 @@ describe Account do
 
     it 'can accept a date as a second argument' do
       expect(subject).to respond_to('pay_out').with(2).argument
+    end
+
+    it 'returns a transaction object when called' do
+      expect(subject.pay_out(50)).to be_a Transaction
     end
   end
 end
