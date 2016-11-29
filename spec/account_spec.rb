@@ -8,8 +8,7 @@ describe Account do
     end
 
     it 'throws an error id no name given for initialization' do
-      no_name = Account.new
-      expect(no_name).to throw_error
+      expect{ Account.new }.to raise_error
     end
   end
 end
