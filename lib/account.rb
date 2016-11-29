@@ -23,7 +23,7 @@ class Account
     @current_balance = transaction.new_balance
   end
 
-  def print
-    Bank.print(self)
+  def print_statement
+    Bank.print_statement(self)
   end
 end
