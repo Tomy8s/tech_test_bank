@@ -34,11 +34,19 @@ describe Account do
     it 'accepts an integer as an argument' do
       expect(subject).to respond_to('pay_in').with(1).argument
     end
+
+    it 'can accept a date as a second argument' do
+      expect(subject).to respond_to('pay_in').with(2).argument
+    end
   end
 
   describe '#pay_out' do
     it 'accepts an integer as an argument' do
       expect(subject).to respond_to('pay_out').with(1).argument
+    end
+
+    it 'can accept a date as a second argument' do
+      expect(subject).to respond_to('pay_out').with(2).argument
     end
   end
 end
