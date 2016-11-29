@@ -4,8 +4,8 @@ describe Bank do
   pay_in = Transaction.new(Date.new(2016,11,29), 50, 100)
   pay_out = Transaction.new(Date.new(2016,11,29), -50, 100)
   account = Account.new('John Smith')
-  account.transaction_history << pay_in
-  account.transaction_history << pay_out
+  account.pay_in(25)
+  account.pay_out(50)
   let(:account) { account }
   let(:statement) { Bank.print_statement(account) }
 
@@ -31,9 +31,10 @@ describe Bank do
       expect(subject.class).to respond_to('print_transactions').with(1).argument
     end
 
-    it 'prints transaction dates' do
-      expect{ subject.class.print_transactions(account) }.to output("2016-11-29\n2016-11-29\n").to_stdout
-    end
+    # Superseded by following test
+    # it 'prints transaction dates' do
+    #   expect{ subject.class.print_transactions(account) }.to output("2016-11-29\n2016-11-29\n").to_stdout
+    # end
 
     it 'prints dates dd/mm/yyy' do
       expect{ subject.class.print_transactions(account) }.to output("29/11/2016\n29/11/2016\n").to_stdout
