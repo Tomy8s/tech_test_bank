@@ -22,4 +22,11 @@ describe Account do
       expect(open_with_50.current_balance).to eq 50
     end
   end
+
+  describe '#transactions' do
+    it 'intializes with an empty array of transactions' do
+      expect(subject.transaction_history).to be_a Array
+      expect(subject.transaction_history).to be_empty
+    end
+  end
 end
