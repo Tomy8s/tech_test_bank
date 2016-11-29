@@ -42,6 +42,10 @@ describe Account do
     it 'returns a transaction object when called' do
       expect(subject.pay_in(50)).to be_a Transaction
     end
+
+    it 'returns a transaction object with the correct amount added' do
+      expect(subject.pay_in(50).balance_change).to eq 50
+    end
   end
 
   describe '#pay_out' do
@@ -55,6 +59,10 @@ describe Account do
 
     it 'returns a transaction object when called' do
       expect(subject.pay_out(50)).to be_a Transaction
+    end
+
+    it 'returns a transaction object with the correct amount added' do
+      expect(subject.pay_out(50).balance_change).to eq -50
     end
   end
 end
