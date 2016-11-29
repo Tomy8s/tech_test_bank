@@ -22,4 +22,8 @@ class Account
   def update_balance(transaction)
     @current_balance = transaction.new_balance
   end
+
+  def print
+    Bank.print(self)
+  end
 end
