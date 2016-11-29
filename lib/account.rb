@@ -18,4 +18,7 @@ class Account
     @transaction_history << transaction
     transaction
   end
+
+  def update_balance(transaction)
+  end
 end
