@@ -9,4 +9,7 @@ class Account
 
   def pay_in(sum)
   end
+
+  def pay_out(sum)
+  end
 end
