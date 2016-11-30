@@ -15,9 +15,9 @@ describe Bank do
       expect(subject.class).to respond_to('print_statement').with(1).argument
     end
 
-    it 'returns headings' do
-      expect{ statement }.to output("date       || credit || debit || balance\n").to_stdout
-    end
+    # it 'returns headings' do
+    #   expect{ statement }.to output("date       || credit || debit || balance\n").to_stdout
+    # end
   end
 
   describe '::print_headings' do
